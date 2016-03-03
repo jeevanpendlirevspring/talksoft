@@ -19,5 +19,3 @@ Receive Response file from Talksoft
 
 Reporting Analytics
 
-comments
-
