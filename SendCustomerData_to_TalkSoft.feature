@@ -52,41 +52,47 @@ Then Clients first name is spoken in the communication
 Scenario: Do not RemindMewithin 1 hour
 Given that customer specifies "2"  in "hoursbetweenRetries"  for phone calls per client 
 Then Client  should not receive any call within 2  hours from the previous call
+
 Scenario: RemindMe should send IVR message  5 days before appointment
 Given that I opt-in for  'Y' in 'Phone Allowed' field and '5" in daysbeforeAppt
 When I Schedule an appointment
 Then I should get an IVR message 5 days before appointment
+
 Scenario: RemindMe should send Text message  5 days before appointment
 Given that I opt-in for  'Y' in ' Text Allowed' field and '5" in daysbeforeAppt
 When I Schedule an appointment
 Then I should get an Text message 5 days before appointment
+
 Scenario: RemindMe should send Email message  5 days before appointment
 Given that I opt-in for  'Y' in ' Email Allowed' field and '5" in daysbeforeAppt
 When I Schedule an appointment
 Then I should get an Email message 5 days before appointment
+
 Scenario: RemindMe should not send communication on Specified days 
 Given that I opt-in for  'Saturday & Sunday' in ' Skipdays ' field 
 When I Schedule an appointment
 Then I should not get any communication on Saturday or Sunday
+
 Scenario: RemindMe should not send communication on Specified days 
 Given that I have an appointment on Friday opt-in for  'Saturday & Sunday' in ' Skipdays ' field  and  '5" in daysbeforeAppt . 
 When I Schedule an appointment
 Then I should not get any communication on Saturday or Sunday
+
 Scenario: RemindMe should send SMS sent with Attempt Status Code = 10
 Given that I opt-in for SMS messages
 When I schedule for an appointment
 And I provide a valid phone number 
 And the SMS is sent without failure
-Then TalkSoft should send the response with Attempt Status Code of 10.
-Scenario: RemindMe should send SMS failed with Attempt Status Code = 11
+Then TalkSoft should send the response with Attempt Status Code of 10
 
+Scenario: RemindMe should send SMS failed with Attempt Status Code = 11
 Given that I opt-in for SMS messages
 When I schedule for an appointment
 And I provide an invalid phone number
 And the SMS message cannot be sent
-Then TalkSoft should send the response with Attempt Status Code of 11.
-Scenario: RemindMe should send SMS delivery confirmed with Attempt Status Code = 14
+Then TalkSoft should send the response with Attempt Status Code of 11
 
+Scenario: RemindMe should send SMS delivery confirmed with Attempt Status Code = 14
 Given that I opt-in for SMS messages
 When I schedule for an appointment
 And I provide a valid phone number 
