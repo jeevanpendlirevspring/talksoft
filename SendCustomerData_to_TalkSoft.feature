@@ -54,12 +54,12 @@ Given that customer specifies "2"  in "hoursbetweenRetries"  for phone calls per
 Then Client  should not receive any call within 2  hours from the previous call
 
 Scenario: RemindMe should send IVR message  5 days before appointment
-Given that I opt-in for  'Y' in 'Phone Allowed' field and '5" in daysbeforeAppt
+Given that I opt-in for  'Y' in 'Phone Allowed' field and '5' in daysbeforeAppt
 When I Schedule an appointment
 Then I should get an IVR message 5 days before appointment
 
 Scenario: RemindMe should send Text message  5 days before appointment
-Given that I opt-in for  'Y' in ' Text Allowed' field and '5" in daysbeforeAppt
+Given that I opt-in for  'Y' in ' Text Allowed' field and '5' in daysbeforeAppt
 When I Schedule an appointment
 Then I should get an Text message 5 days before appointment
 
