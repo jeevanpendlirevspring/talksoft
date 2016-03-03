@@ -64,7 +64,7 @@ When I Schedule an appointment
 Then I should get an Text message 5 days before appointment
 
 Scenario: RemindMe should send Email message  5 days before appointment
-Given that I opt-in for  'Y' in ' Email Allowed' field and '5" in daysbeforeAppt
+Given that I opt-in for  'Y' in ' Email Allowed' field and '5' in daysbeforeAppt
 When I Schedule an appointment
 Then I should get an Email message 5 days before appointment
 
