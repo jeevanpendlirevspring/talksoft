@@ -74,7 +74,7 @@ When I Schedule an appointment
 Then I should not get any communication on Saturday or Sunday
 
 Scenario: RemindMe should not send communication on Specified days 
-Given that I have an appointment on Friday opt-in for  'Saturday & Sunday' in ' Skipdays ' field  and  '5" in daysbeforeAppt . 
+Given that I have an appointment on Friday opt-in for  'Saturday & Sunday' in ' Skipdays ' field  and  '5' in daysbeforeAppt . 
 When I Schedule an appointment
 Then I should not get any communication on Saturday or Sunday
 
